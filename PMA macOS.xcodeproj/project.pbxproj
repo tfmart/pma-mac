@@ -11,6 +11,8 @@
 		7C15D6D223E38414003595BF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C15D6D123E38414003595BF /* ViewController.swift */; };
 		7C15D6D423E38418003595BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C15D6D323E38418003595BF /* Assets.xcassets */; };
 		7C15D6D723E38418003595BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C15D6D523E38418003595BF /* Main.storyboard */; };
+		7C15D6E123E3B1F5003595BF /* LoginRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C15D6E023E3B1F5003595BF /* LoginRequester.swift */; };
+		7C15D6E623E3BE1C003595BF /* NewEntryRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C15D6E523E3BE1C003595BF /* NewEntryRequester.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +23,8 @@
 		7C15D6D623E38418003595BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7C15D6D823E38418003595BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7C15D6D923E38418003595BF /* PMA_macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PMA_macOS.entitlements; sourceTree = "<group>"; };
+		7C15D6E023E3B1F5003595BF /* LoginRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequester.swift; sourceTree = "<group>"; };
+		7C15D6E523E3BE1C003595BF /* NewEntryRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEntryRequester.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,9 @@
 		7C15D6CE23E38414003595BF /* PMA macOS */ = {
 			isa = PBXGroup;
 			children = (
+				7C15D6E323E3BC47003595BF /* Models */,
+				7C15D6E223E3BC3F003595BF /* Helpers */,
+				7C15D6DF23E3B1E8003595BF /* Requesters */,
 				7C15D6CF23E38414003595BF /* AppDelegate.swift */,
 				7C15D6D123E38414003595BF /* ViewController.swift */,
 				7C15D6D323E38418003595BF /* Assets.xcassets */,
@@ -61,6 +68,29 @@
 				7C15D6D923E38418003595BF /* PMA_macOS.entitlements */,
 			);
 			path = "PMA macOS";
+			sourceTree = "<group>";
+		};
+		7C15D6DF23E3B1E8003595BF /* Requesters */ = {
+			isa = PBXGroup;
+			children = (
+				7C15D6E023E3B1F5003595BF /* LoginRequester.swift */,
+				7C15D6E523E3BE1C003595BF /* NewEntryRequester.swift */,
+			);
+			path = Requesters;
+			sourceTree = "<group>";
+		};
+		7C15D6E223E3BC3F003595BF /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		7C15D6E323E3BC47003595BF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,6 +165,8 @@
 			files = (
 				7C15D6D223E38414003595BF /* ViewController.swift in Sources */,
 				7C15D6D023E38414003595BF /* AppDelegate.swift in Sources */,
+				7C15D6E623E3BE1C003595BF /* NewEntryRequester.swift in Sources */,
+				7C15D6E123E3B1F5003595BF /* LoginRequester.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
