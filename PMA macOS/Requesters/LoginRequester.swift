@@ -12,10 +12,13 @@ class LoginRequester {
     
     var username: String?
     var password: String?
+    public typealias Completion = ((String?, PMAError?) -> Void)
+    var completion: Completion
     
-    init(username: String, password: String) {
+    init(username: String, password: String, completion: @escaping Completion) {
         self.username = username
         self.password = password
+        self.completion = completion
     }
     
     func start() {
@@ -25,9 +28,19 @@ class LoginRequester {
         request.httpMethod = "POST"
 
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data else { return }
+            guard let data = data else {
+                self.completion(nil, .noData)
+                return
+            }
             let responseString = String(data: data, encoding: String.Encoding.utf8)
-            dump(responseString)
+            switch responseString {
+            case "Usuario e/ou senha inválidos":
+                self.completion(nil, .invalidCredentials)
+            case "Login e senha são obrigatorios":
+                self.completion(nil, .missingLoginField)
+            default:
+                self.completion(responseString, nil)
+            }
         }
 
         task.resume()

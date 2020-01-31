@@ -30,7 +30,13 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         let endDay = endDayPicker.dateValue.day
         let endTime = endTimePicker.dateValue.time
         let description = descriptionTextField.stringValue
-        let newEntry = NewEntryRequester(start: "\(startDay)%20\(startTime)", end: "\(endDay)%20\(endTime)", projectID: 959, activityID: 8915, description: description.replacingOccurrences(of: " ", with: "%20"))
+        let newEntry = NewEntryRequester(start: "\(startDay)%20\(startTime)", end: "\(endDay)%20\(endTime)", projectID: 959, activityID: 8915, description: description.replacingOccurrences(of: " ", with: "%20")) { (entry, error) in
+            guard error == nil else {
+                self.displayNotification(with: error)
+                return
+            }
+            self.displayNotification()
+        }
         newEntry.start()
     }
     
@@ -43,17 +49,51 @@ class ViewController: NSViewController, NSTextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        showLoginAlert()
+        pickersInitialSetup()
+    }
+    
+    func performLogin() {
+        let requester = LoginRequester(username: "tomas.martins", password: "n3wstarthyp3") { (message, error) in
+            guard error == nil else {
+                self.displayNotification(with: error)
+                return
+            }
+        }
+        requester.start()
+    }
+    
+    func pickersInitialSetup() {
         startDayPicker.dateValue = todayDate
         endDayPicker.dateValue = todayDate
         endTimePicker.dateValue = todayDate
-        let req = LoginRequester(username: "", password: "")
-        req.start()
     }
-
-    override var representedObject: Any? {
-        didSet {
-        // Update the view, if already loaded.
+    
+    func showLoginAlert() {
+        let loginAlert = NSAlert()
+        loginAlert.messageText = "PMA"
+        loginAlert.informativeText = "Faça login"
+        loginAlert.alertStyle = .warning
+        loginAlert.addButton(withTitle: "Login")
+        loginAlert.addButton(withTitle: "Cancelar")
+        let response = loginAlert.runModal()
+        if response == .alertFirstButtonReturn {
+            performLogin()
         }
+    }
+    
+    //MARK: - Methods
+    func displayNotification(with error: PMAError? = nil) {
+        let notification = NSUserNotification()
+        if let error = error {
+            notification.title = "Erro ao apontar o PMA"
+            notification.informativeText = error.rawValue
+        } else {
+            notification.title = "PMA"
+            notification.informativeText = "Apontamento criado com sucesso"
+        }
+        notification.soundName = NSUserNotificationDefaultSoundName
+        NSUserNotificationCenter.default.deliver(notification)
     }
     
     
