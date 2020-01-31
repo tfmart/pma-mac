@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15702"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15505"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -711,7 +712,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="292" height="24"/>
                                         <subviews>
                                             <datePicker verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Yod-KK-DBH">
-                                                <rect key="frame" x="0.0" y="0.0" width="100" height="28"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="27"/>
                                                 <datePickerCell key="cell" borderStyle="bezel" alignment="left" id="FyG-Tu-fLo">
                                                     <font key="font" metaFont="system"/>
                                                     <date key="date" timeIntervalSinceReferenceDate="-595929600">
@@ -725,7 +726,7 @@
                                                 </connections>
                                             </datePicker>
                                             <datePicker verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JfR-hE-XR9">
-                                                <rect key="frame" x="233" y="0.0" width="62" height="28"/>
+                                                <rect key="frame" x="233" y="1" width="62" height="27"/>
                                                 <datePickerCell key="cell" borderStyle="bezel" alignment="left" id="SHm-FJ-Y4n">
                                                     <font key="font" metaFont="system"/>
                                                     <date key="date" timeIntervalSinceReferenceDate="-595976400">
@@ -777,7 +778,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="292" height="24"/>
                                         <subviews>
                                             <datePicker verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4AY-a9-4mx">
-                                                <rect key="frame" x="0.0" y="0.0" width="100" height="28"/>
+                                                <rect key="frame" x="0.0" y="1" width="100" height="27"/>
                                                 <datePickerCell key="cell" borderStyle="bezel" alignment="left" id="8nN-jq-Yyw">
                                                     <font key="font" metaFont="system"/>
                                                     <date key="date" timeIntervalSinceReferenceDate="-595929600">
@@ -788,7 +789,7 @@
                                                 </datePickerCell>
                                             </datePicker>
                                             <datePicker verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qt1-kK-tdk">
-                                                <rect key="frame" x="233" y="0.0" width="62" height="28"/>
+                                                <rect key="frame" x="233" y="1" width="62" height="27"/>
                                                 <datePickerCell key="cell" borderStyle="bezel" alignment="left" id="QDV-uG-pHa">
                                                     <font key="font" metaFont="system"/>
                                                     <date key="date" timeIntervalSinceReferenceDate="-595976400">
@@ -832,12 +833,12 @@
                             </textField>
                             <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="QdO-aD-fIH" userLabel="Project Picker">
                                 <rect key="frame" x="14" y="215" width="305" height="25"/>
-                                <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="4aS-WE-i6a" id="v3w-8j-GRZ">
+                                <popUpButtonCell key="cell" type="push" title="Dafiti: Squads Dafiti" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="4aS-WE-i6a" id="v3w-8j-GRZ">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
+                                    <font key="font" metaFont="menu"/>
                                     <menu key="menu" id="Jd2-cd-a5Y">
                                         <items>
-                                            <menuItem title="Item 1" state="on" id="4aS-WE-i6a"/>
+                                            <menuItem title="Dafiti: Squads Dafiti" state="on" id="4aS-WE-i6a"/>
                                             <menuItem title="Item 2" id="HAq-2e-Bwt"/>
                                             <menuItem title="Item 3" id="k0D-Ya-djm"/>
                                         </items>
@@ -854,12 +855,12 @@
                             </textField>
                             <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ftw-3F-X3l" userLabel="Activity Picker">
                                 <rect key="frame" x="14" y="150" width="305" height="25"/>
-                                <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="gAi-F7-l7w" id="e2q-Di-yBi">
+                                <popUpButtonCell key="cell" type="push" title="Desenvolvimento" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="gAi-F7-l7w" id="e2q-Di-yBi">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
+                                    <font key="font" metaFont="menu"/>
                                     <menu key="menu" id="ry8-jk-dT7">
                                         <items>
-                                            <menuItem title="Item 1" state="on" id="gAi-F7-l7w"/>
+                                            <menuItem title="Desenvolvimento" state="on" id="gAi-F7-l7w"/>
                                             <menuItem title="Item 2" id="jcC-yj-Rar"/>
                                             <menuItem title="Item 3" id="EB1-4q-P7z"/>
                                         </items>

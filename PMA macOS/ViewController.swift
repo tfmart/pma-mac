@@ -61,22 +61,4 @@ class ViewController: NSViewController, NSTextFieldDelegate {
     func controlTextDidChange(_ obj: Notification) {
         
     }
-    
 }
-
-extension Date {
-    var time: String {
-        let timeFormatter = DateFormatter()
-        timeFormatter.dateFormat = "HH:mm:ss"
-        let timeString = timeFormatter.string(from: self)
-        return timeString
-    }
-    
-    var day: String {
-        let dayFormatter = DateFormatter()
-        dayFormatter.dateFormat = "yyyy-MM-dd"
-        let dayString = dayFormatter.string(from: self)
-        return dayString
-    }
-}
-
