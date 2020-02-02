@@ -61,28 +61,34 @@ class NewEntryRequester {
             let errorDecoder = JSONDecoder()
             let errors = try? errorDecoder.decode([String].self, from: data)
             guard let requestError = errors?[0] else {
-                let responseString = String(data: data, encoding: String.Encoding.utf8)
-                dump(responseString)
-                throw PMAError.decodeError
+                guard let requestError = String(data: data, encoding: String.Encoding.utf8) else {
+                    throw PMAError.decodeError
+                }
+                throw getError(for: requestError)
             }
-            switch requestError {
-            case "Erro ao salvar apontamento: Esse projeto ou atividade não existe":
-                throw PMAError.invalidProjectOrActivity
-            case "Você não está alocado nesta atividade. Procure seu gerente, ou responsável.":
-                throw PMAError.nonRegisteredActivity
-            case "Descricao é de preenchimento obrigatório.":
-                throw PMAError.missingDescription
-            case "Início e fim devem ser no mesmo dia.":
-                throw PMAError.differentDays
-            case "Sua sessão expirou. Efetue o login novamente.":
-                throw PMAError.expiredSession
-            case "Fim  precisa pertencer a intervalos de 5 minutos.":
-                throw PMAError.invalidEndTime
-            case " Já existe um registro cadastrado para esse dia no intervalo informado. Favor verifique e tente novamente.":
-                throw PMAError.entryAlreadyExists
-            default:
-                throw PMAError.unknown
-            }
+            throw getError(for: requestError)
+        }
+    }
+    
+    private func getError(for response: String) -> PMAError{
+        switch response {
+        case "Erro ao salvar apontamento: Esse projeto ou atividade não existe":
+            return PMAError.invalidProjectOrActivity
+        case "Você não está alocado nesta atividade. Procure seu gerente, ou responsável.":
+            return PMAError.nonRegisteredActivity
+        case "Descricao é de preenchimento obrigatório.":
+            return PMAError.missingDescription
+        case "Início e fim devem ser no mesmo dia.":
+            return PMAError.differentDays
+        case "Sua sessão expirou. Efetue o login novamente.":
+            return PMAError.expiredSession
+        case "Fim  precisa pertencer a intervalos de 5 minutos.":
+            return PMAError.invalidEndTime
+        case " Já existe um registro cadastrado para esse dia no intervalo informado. Favor verifique e tente novamente.":
+            return PMAError.entryAlreadyExists
+        default:
+            dump(response)
+            return PMAError.unknown
         }
     }
 }

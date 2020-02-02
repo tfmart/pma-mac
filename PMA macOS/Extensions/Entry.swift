@@ -11,14 +11,14 @@ import Foundation
 // MARK: - Registro
 public class Entry: Codable {
     let trueDate: String?
-    let inicio, createdAt: Date?
+    let inicio, createdAt: String?
     let atividadeID, id: Int?
     let data: String?
     let apontamentoDiarioID: Int?
-    let updatedAt: Date?
+    let updatedAt: String?
     let projetoID: Int?
     let minutoInicio, minutoFim: String?
-    let fim: Date?
+    let fim: String?
     let statusDia: String?
     let descricao: String?
     let aprovacao: Int?
@@ -57,17 +57,17 @@ public class Entry: Codable {
     required public init(from decoder:Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.trueDate = try container.decodeIfPresent(String.self, forKey: .trueDate)
-        self.inicio = try container.decodeIfPresent(Date.self, forKey: .inicio)
-        self.createdAt = try container.decodeIfPresent(Date.self, forKey: .createdAt)
+        self.inicio = try container.decodeIfPresent(String.self, forKey: .inicio)
+        self.createdAt = try container.decodeIfPresent(String.self, forKey: .createdAt)
         self.atividadeID = try container.decodeIfPresent(Int.self, forKey: .atividadeID)
         self.id = try container.decodeIfPresent(Int.self, forKey: .id)
         self.data = try container.decodeIfPresent(String.self, forKey: .data)
         self.apontamentoDiarioID = try container.decodeIfPresent(Int.self, forKey: .apontamentoDiarioID)
-        self.updatedAt = try container.decodeIfPresent(Date.self, forKey: .updatedAt)
+        self.updatedAt = try container.decodeIfPresent(String.self, forKey: .updatedAt)
         self.projetoID = try container.decodeIfPresent(Int.self, forKey: .projetoID)
         self.minutoInicio = try container.decodeIfPresent(String.self, forKey: .minutoInicio)
         self.minutoFim = try container.decodeIfPresent(String.self, forKey: .minutoFim)
-        self.fim = try container.decodeIfPresent(Date.self, forKey: .fim)
+        self.fim = try container.decodeIfPresent(String.self, forKey: .fim)
         self.statusDia = try container.decodeIfPresent(String.self, forKey: .statusDia)
         self.descricao = try container.decodeIfPresent(String.self, forKey: .descricao)
         self.aprovacao = try container.decodeIfPresent(Int.self, forKey: .aprovacao)

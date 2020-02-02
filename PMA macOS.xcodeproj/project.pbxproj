@@ -11,6 +11,7 @@
 		0AAFD7A323E458C500D9E0A6 /* PMAError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAFD7A223E458C500D9E0A6 /* PMAError.swift */; };
 		0AAFD7A623E4A08C00D9E0A6 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 0AAFD7A523E4A08C00D9E0A6 /* SwiftSoup */; };
 		0AAFD7A823E4A9AB00D9E0A6 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAFD7A723E4A9AB00D9E0A6 /* Entry.swift */; };
+		7C15845223E6266B00974CDC /* SessionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C15845123E6266B00974CDC /* SessionHelper.swift */; };
 		7C15D6D023E38414003595BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C15D6CF23E38414003595BF /* AppDelegate.swift */; };
 		7C15D6D223E38414003595BF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C15D6D123E38414003595BF /* ViewController.swift */; };
 		7C15D6D423E38418003595BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C15D6D323E38418003595BF /* Assets.xcassets */; };
@@ -23,6 +24,7 @@
 		0AAFD7A023E44BF000D9E0A6 /* Date+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+String.swift"; sourceTree = "<group>"; };
 		0AAFD7A223E458C500D9E0A6 /* PMAError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PMAError.swift; path = "PMA macOS/Extensions/PMAError.swift"; sourceTree = SOURCE_ROOT; };
 		0AAFD7A723E4A9AB00D9E0A6 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Entry.swift; path = "PMA macOS/Extensions/Entry.swift"; sourceTree = SOURCE_ROOT; };
+		7C15845123E6266B00974CDC /* SessionHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionHelper.swift; sourceTree = "<group>"; };
 		7C15D6CC23E38414003595BF /* PMA macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PMA macOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C15D6CF23E38414003595BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C15D6D123E38414003595BF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				0AAFD7A223E458C500D9E0A6 /* PMAError.swift */,
+				7C15845123E6266B00974CDC /* SessionHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 				7C15D6D223E38414003595BF /* ViewController.swift in Sources */,
 				7C15D6D023E38414003595BF /* AppDelegate.swift in Sources */,
 				7C15D6E623E3BE1C003595BF /* NewEntryRequester.swift in Sources */,
+				7C15845223E6266B00974CDC /* SessionHelper.swift in Sources */,
 				0AAFD7A323E458C500D9E0A6 /* PMAError.swift in Sources */,
 				0AAFD7A123E44BF000D9E0A6 /* Date+String.swift in Sources */,
 				7C15D6E123E3B1F5003595BF /* LoginRequester.swift in Sources */,
@@ -340,7 +344,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				PRODUCT_BUNDLE_IDENTIFIER = "tfmartin.PMA-macOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "tfmartins.PMA-macOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -361,7 +365,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				PRODUCT_BUNDLE_IDENTIFIER = "tfmartin.PMA-macOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "tfmartins.PMA-macOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};

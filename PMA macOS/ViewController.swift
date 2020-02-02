@@ -11,7 +11,6 @@ import Cocoa
 class ViewController: NSViewController, NSTextFieldDelegate {
     
     //MARK: - IBOutlets
-    @IBOutlet weak var usernameLabel: NSTextField!
     @IBOutlet weak var startDayPicker: NSDatePicker!
     @IBOutlet weak var startTimePicker: NSDatePicker!
     @IBOutlet weak var endDayPicker: NSDatePicker!
@@ -20,24 +19,31 @@ class ViewController: NSViewController, NSTextFieldDelegate {
     @IBOutlet weak var acivityPicker: NSPopUpButton!
     @IBOutlet weak var descriptionTextField: NSTextField!
     @IBOutlet weak var saveButton: NSButton!
-    
-    let todayDate = Date()
+    @IBOutlet weak var usernameLabel: NSTextField!
     
     //MARK: - IBActions
     @IBAction func saveButtonClicked(_ sender: Any) {
-        let startDay = startDayPicker.dateValue.day
-        let startTime = startTimePicker.dateValue.time
-        let endDay = endDayPicker.dateValue.day
-        let endTime = endTimePicker.dateValue.time
-        let description = descriptionTextField.stringValue
-        let newEntry = NewEntryRequester(start: "\(startDay)%20\(startTime)", end: "\(endDay)%20\(endTime)", projectID: 959, activityID: 8915, description: description.replacingOccurrences(of: " ", with: "%20")) { (entry, error) in
-            guard error == nil else {
-                self.displayNotification(with: error)
-                return
-            }
-            self.displayNotification()
+        let startDate = "\(startDayPicker.dateValue.day)%20\(startTimePicker.dateValue.time)"
+        let endDate = "\(endDayPicker.dateValue.day)%20\(endTimePicker.dateValue.time)"
+        let description = descriptionTextField.stringValue.replacingOccurrences(of: " ", with: "%20")
+        let newEntryRequester = NewEntryRequester(start: startDate, end: endDate,
+                                                  projectID: 959, activityID: 8915,
+                                                  description: description) { (entry, error) in
+                                                    guard error == nil else {
+                                                        if error == .expiredSession {
+                                                            UserDefaults.standard.set(false, forKey: "hasSession")
+                                                            DispatchQueue.main.async {
+                                                                SessionHelper.shared.displayLogin(message: error?.rawValue) {}
+                                                            }
+                                                        } else {
+                                                            self.displayNotification(with: error)
+                                                        }
+                                                        return
+                                                    }
+                                                    self.displayNotification()
+                                                    self.dismiss(self)
         }
-        newEntry.start()
+        newEntryRequester.start()
     }
     
     @IBAction func startDateChanged(_ sender: Any) {
@@ -46,40 +52,11 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         }
     }
     
-
+    //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        showLoginAlert()
+        self.usernameLabel.stringValue = SessionHelper.shared.username
         pickersInitialSetup()
-    }
-    
-    func performLogin() {
-        let requester = LoginRequester(username: "tomas.martins", password: "n3wstarthyp3") { (message, error) in
-            guard error == nil else {
-                self.displayNotification(with: error)
-                return
-            }
-        }
-        requester.start()
-    }
-    
-    func pickersInitialSetup() {
-        startDayPicker.dateValue = todayDate
-        endDayPicker.dateValue = todayDate
-        endTimePicker.dateValue = todayDate
-    }
-    
-    func showLoginAlert() {
-        let loginAlert = NSAlert()
-        loginAlert.messageText = "PMA"
-        loginAlert.informativeText = "Faça login"
-        loginAlert.alertStyle = .warning
-        loginAlert.addButton(withTitle: "Login")
-        loginAlert.addButton(withTitle: "Cancelar")
-        let response = loginAlert.runModal()
-        if response == .alertFirstButtonReturn {
-            performLogin()
-        }
     }
     
     //MARK: - Methods
@@ -92,10 +69,14 @@ class ViewController: NSViewController, NSTextFieldDelegate {
             notification.title = "PMA"
             notification.informativeText = "Apontamento criado com sucesso"
         }
-        notification.soundName = NSUserNotificationDefaultSoundName
         NSUserNotificationCenter.default.deliver(notification)
     }
     
+    func pickersInitialSetup() {
+        startDayPicker.dateValue = Date()
+        endDayPicker.dateValue = Date()
+        endTimePicker.dateValue = Date()
+    }
     
     //MARK: - NSTextFieldDelegate
     func controlTextDidChange(_ obj: Notification) {
