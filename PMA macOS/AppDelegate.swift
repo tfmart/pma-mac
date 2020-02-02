@@ -11,25 +11,37 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
-
+    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         statusItem.button?.title = "⏰"
         statusItem.button?.target = self
         statusItem.button?.action = #selector(statusItemClicked)
     }
-
+    
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
     }
-
+    
     @objc func statusItemClicked() {
         if SessionHelper.shared.hasSession {
             presentEntryView()
         } else {
             SessionHelper.shared.displayLogin {
-                self.presentEntryView()
+                if !SessionHelper.shared.isPreviousUser {
+                    self.presentWelcomeView()
+                    UserDefaults.standard.set(true, forKey: "isPreviousUser")
+                } else {
+                    self.presentEntryView()
+                }
             }
         }
+    }
+    
+    private func popUp(view viewController: NSViewController) {
+        let popOverView = NSPopover()
+        popOverView.contentViewController = viewController
+        popOverView.behavior = .transient
+        popOverView.show(relativeTo: self.statusItem.button!.bounds, of: self.statusItem.button!, preferredEdge: .maxY)
     }
     
     private func presentEntryView() {
@@ -38,10 +50,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             guard let pmaViewController = storyboard.instantiateController(withIdentifier: "ViewController") as? ViewController else {
                 fatalError("Unable to find PMA View Controller in the storyboard")
             }
-            let popOverView = NSPopover()
-            popOverView.contentViewController = pmaViewController
-            popOverView.behavior = .transient
-            popOverView.show(relativeTo: self.statusItem.button!.bounds, of: self.statusItem.button!, preferredEdge: .maxY)
+            self.popUp(view: pmaViewController)
+        }
+    }
+    
+    private func presentWelcomeView() {
+        DispatchQueue.main.async {
+            let storyboard = NSStoryboard(name: "Main", bundle: nil)
+            guard let welcomeView = storyboard.instantiateController(withIdentifier: "welcomePopUp") as? WelcomePopUp else {
+                self.presentEntryView()
+                return
+            }
+            self.popUp(view: welcomeView)
         }
     }
 }

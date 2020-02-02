@@ -23,9 +23,9 @@ class SessionHelper {
     private func setupTextFields() {
         usernameTextField = NSTextField(frame: NSRect(x: 0, y: 28, width: 200, height: 24))
         usernameTextField.placeholderString = "Usuário"
-        usernameTextField.nextKeyView = passwordTextField
         passwordTextField = NSSecureTextField(frame: NSRect(x: 0, y: 2, width: 200, height: 24))
         passwordTextField.placeholderString = "Senha"
+        usernameTextField.nextKeyView = passwordTextField
     }
     
     private func setupStackView() {
@@ -37,6 +37,10 @@ class SessionHelper {
     
     var hasSession: Bool {
         return UserDefaults.standard.bool(forKey: "hasSession")
+    }
+    
+    var isPreviousUser: Bool {
+        return UserDefaults.standard.bool(forKey: "isPreviousUser")
     }
     
     private func setupLoginAlert(message: String? = nil) {
@@ -88,7 +92,7 @@ class SessionHelper {
     }
     
     func displayLogin(message: String? = nil, success: @escaping () -> ()) {
-        setupLoginAlert()
+        setupLoginAlert(message: message)
         let response = loginAlert.runModal()
         if response == .alertFirstButtonReturn {
             SessionHelper.shared.newSession(username: SessionHelper.shared.usernameTextField.stringValue,

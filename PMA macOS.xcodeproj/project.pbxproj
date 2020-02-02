@@ -18,6 +18,7 @@
 		7C15D6D723E38418003595BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C15D6D523E38418003595BF /* Main.storyboard */; };
 		7C15D6E123E3B1F5003595BF /* LoginRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C15D6E023E3B1F5003595BF /* LoginRequester.swift */; };
 		7C15D6E623E3BE1C003595BF /* NewEntryRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C15D6E523E3BE1C003595BF /* NewEntryRequester.swift */; };
+		7C343A6423E6785E0040D8E3 /* WelcomePopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C343A6323E6785E0040D8E3 /* WelcomePopUp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		7C15D6D923E38418003595BF /* PMA_macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PMA_macOS.entitlements; sourceTree = "<group>"; };
 		7C15D6E023E3B1F5003595BF /* LoginRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequester.swift; sourceTree = "<group>"; };
 		7C15D6E523E3BE1C003595BF /* NewEntryRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEntryRequester.swift; sourceTree = "<group>"; };
+		7C343A6323E6785E0040D8E3 /* WelcomePopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePopUp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 			children = (
 				7C15D6E023E3B1F5003595BF /* LoginRequester.swift */,
 				7C15D6E523E3BE1C003595BF /* NewEntryRequester.swift */,
+				7C343A6323E6785E0040D8E3 /* WelcomePopUp.swift */,
 			);
 			path = Requesters;
 			sourceTree = "<group>";
@@ -198,6 +201,7 @@
 				7C15845223E6266B00974CDC /* SessionHelper.swift in Sources */,
 				0AAFD7A323E458C500D9E0A6 /* PMAError.swift in Sources */,
 				0AAFD7A123E44BF000D9E0A6 /* Date+String.swift in Sources */,
+				7C343A6423E6785E0040D8E3 /* WelcomePopUp.swift in Sources */,
 				7C15D6E123E3B1F5003595BF /* LoginRequester.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
