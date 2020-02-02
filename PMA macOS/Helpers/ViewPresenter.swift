@@ -13,6 +13,7 @@ class ViewPresenter {
     private init() {}
     
     let statusBar = EntryStatusBarItem()
+    var presentedView: NSViewController? = nil
     
     @objc func presentEntryView() {
         DispatchQueue.main.async {
@@ -40,8 +41,14 @@ class ViewPresenter {
             let statusBarItem = self.statusBar.item
             let popOverView = NSPopover()
             popOverView.contentViewController = viewController
+            self.presentedView = viewController
             popOverView.behavior = .transient
             popOverView.show(relativeTo: statusBarItem.button!.bounds, of: statusBarItem.button!, preferredEdge: .maxY)
         }
+    }
+    
+    func dismiss() {
+        guard let presentedView = self.presentedView else { return }
+        presentedView.dismiss(presentedView)
     }
 }

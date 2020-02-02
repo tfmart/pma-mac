@@ -729,8 +729,8 @@
                                                 <rect key="frame" x="233" y="0.0" width="62" height="28"/>
                                                 <datePickerCell key="cell" borderStyle="bezel" alignment="left" id="SHm-FJ-Y4n">
                                                     <font key="font" metaFont="system"/>
-                                                    <date key="date" timeIntervalSinceReferenceDate="-595976400">
-                                                        <!--1982-02-12 03:00:00 +0000-->
+                                                    <date key="date" timeIntervalSinceReferenceDate="-595947600">
+                                                        <!--1982-02-12 11:00:00 +0000-->
                                                     </date>
                                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>

@@ -29,19 +29,20 @@ class NewEntryViewController: NSViewController, NSTextFieldDelegate {
         let newEntryRequester = NewEntryRequester(start: startDate, end: endDate,
                                                   projectID: 959, activityID: 8915,
                                                   description: description) { (entry, error) in
-                                                    guard error == nil else {
-                                                        if error == .expiredSession {
-                                                            UserDefaults.standard.set(false, forKey: "hasSession")
-                                                            DispatchQueue.main.async {
+                                                    DispatchQueue.main.async {
+                                                        guard error == nil else {
+                                                            if error == .expiredSession {
+                                                                UserDefaults.standard.set(false, forKey: "hasSession")
                                                                 SessionHelper.shared.displayLogin(message: error?.rawValue) {}
+                                                            } else {
+                                                                self.displayNotification(with: error)
                                                             }
-                                                        } else {
-                                                            self.displayNotification(with: error)
+                                                            return
                                                         }
-                                                        return
+                                                        self.displayNotification()
+                                                        EntryManager.saveDraft(date: self.startDayPicker.dateValue, starTime: self.startTimePicker.dateValue, endTime: self.endTimePicker.dateValue, description: self.descriptionTextField.stringValue)
+                                                        ViewPresenter.shared.dismiss()
                                                     }
-                                                    self.displayNotification()
-                                                    self.dismiss(self)
         }
         newEntryRequester.start()
     }
@@ -59,6 +60,12 @@ class NewEntryViewController: NSViewController, NSTextFieldDelegate {
         pickersInitialSetup()
     }
     
+    override func viewWillDisappear() {
+        if /*failed to submit new entry*/ true {
+            EntryManager.saveDraft(date: self.startDayPicker.dateValue, starTime: self.startTimePicker.dateValue, endTime: self.endTimePicker.dateValue, description: self.descriptionTextField.stringValue)
+        }
+    }
+    
     //MARK: - Methods
     func displayNotification(with error: PMAError? = nil) {
         let notification = NSUserNotification()
@@ -73,9 +80,12 @@ class NewEntryViewController: NSViewController, NSTextFieldDelegate {
     }
     
     func pickersInitialSetup() {
-        startDayPicker.dateValue = Date()
-        endDayPicker.dateValue = Date()
-        endTimePicker.dateValue = Date()
+        let startTimeValue = startTimePicker.dateValue
+        startDayPicker.dateValue = EntryManager.day ?? Date()
+        startTimePicker.dateValue = EntryManager.starTime ?? startTimeValue
+        endDayPicker.dateValue = EntryManager.day ?? Date()
+        endTimePicker.dateValue = EntryManager.endTime ?? Date()
+        descriptionTextField.stringValue = EntryManager.description ?? ""
     }
     
     //MARK: - NSTextFieldDelegate

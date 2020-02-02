@@ -73,22 +73,24 @@ class NewEntryRequester {
     private func getError(for response: String) -> PMAError{
         switch response {
         case "Erro ao salvar apontamento: Esse projeto ou atividade não existe":
-            return PMAError.invalidProjectOrActivity
+            return .invalidProjectOrActivity
         case "Você não está alocado nesta atividade. Procure seu gerente, ou responsável.":
-            return PMAError.nonRegisteredActivity
+            return .nonRegisteredActivity
         case "Descricao é de preenchimento obrigatório.":
-            return PMAError.missingDescription
+            return .missingDescription
         case "Início e fim devem ser no mesmo dia.":
-            return PMAError.differentDays
+            return .differentDays
         case "Sua sessão expirou. Efetue o login novamente.":
-            return PMAError.expiredSession
+            return .expiredSession
         case "Fim  precisa pertencer a intervalos de 5 minutos.":
-            return PMAError.invalidEndTime
+            return .invalidEndTime
         case " Já existe um registro cadastrado para esse dia no intervalo informado. Favor verifique e tente novamente.":
-            return PMAError.entryAlreadyExists
+            return .entryAlreadyExists
+        case " Esforço deve ser maior que 0.":
+            return .noTimeDifference
         default:
             dump(response)
-            return PMAError.unknown
+            return .unknown
         }
     }
 }

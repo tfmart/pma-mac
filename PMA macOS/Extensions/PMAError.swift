@@ -21,6 +21,7 @@ enum PMAError: String, Error {
     case differentDays = "Início e fim devem ser no mesmo dia."
     case expiredSession = "Sua sessão expirou. Efetue o login novamente."
     case invalidEndTime = "Fim  precisa pertencer a intervalos de 5 minutos."
+    case noTimeDifference = " Esforço deve ser maior que 0."
     //MARK: - General
     case noData = "Verifique a sua conexão com a internet"
     case decodeError

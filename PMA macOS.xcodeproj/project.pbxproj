@@ -21,6 +21,7 @@
 		7C343A6423E6785E0040D8E3 /* WelcomePopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C343A6323E6785E0040D8E3 /* WelcomePopUp.swift */; };
 		7CB449A123E7170D001A4B23 /* EntryStatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB449A023E7170D001A4B23 /* EntryStatusBar.swift */; };
 		7CB449A323E71D98001A4B23 /* ViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB449A223E71D98001A4B23 /* ViewPresenter.swift */; };
+		7CB449A523E72555001A4B23 /* EntryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB449A423E72555001A4B23 /* EntryManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		7C343A6323E6785E0040D8E3 /* WelcomePopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePopUp.swift; sourceTree = "<group>"; };
 		7CB449A023E7170D001A4B23 /* EntryStatusBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryStatusBar.swift; sourceTree = "<group>"; };
 		7CB449A223E71D98001A4B23 /* ViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPresenter.swift; sourceTree = "<group>"; };
+		7CB449A423E72555001A4B23 /* EntryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				0AAFD7A223E458C500D9E0A6 /* PMAError.swift */,
 				7C15845123E6266B00974CDC /* SessionHelper.swift */,
 				7CB449A223E71D98001A4B23 /* ViewPresenter.swift */,
+				7CB449A423E72555001A4B23 /* EntryManager.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 				7C15D6E623E3BE1C003595BF /* NewEntryRequester.swift in Sources */,
 				7CB449A123E7170D001A4B23 /* EntryStatusBar.swift in Sources */,
 				7C15845223E6266B00974CDC /* SessionHelper.swift in Sources */,
+				7CB449A523E72555001A4B23 /* EntryManager.swift in Sources */,
 				0AAFD7A323E458C500D9E0A6 /* PMAError.swift in Sources */,
 				0AAFD7A123E44BF000D9E0A6 /* Date+String.swift in Sources */,
 				7C343A6423E6785E0040D8E3 /* WelcomePopUp.swift in Sources */,
