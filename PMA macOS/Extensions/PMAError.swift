@@ -22,6 +22,7 @@ enum PMAError: String, Error {
     case expiredSession = "Sua sessão expirou. Efetue o login novamente."
     case invalidEndTime = "Fim  precisa pertencer a intervalos de 5 minutos."
     case noTimeDifference = " Esforço deve ser maior que 0."
+    case invalidActivity = "O apontamento não corresponde a nenhuma etapa cadastrada no projeto. Procure seu gerente, ou responsável."
     //MARK: - General
     case noData = "Verifique a sua conexão com a internet"
     case decodeError

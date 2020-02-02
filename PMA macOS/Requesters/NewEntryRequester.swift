@@ -88,6 +88,8 @@ class NewEntryRequester {
             return .entryAlreadyExists
         case " Esforço deve ser maior que 0.":
             return .noTimeDifference
+        case _ where response.hasPrefix(" O apontamento não corresponde a nenhuma etapa cadastrada no projeto"):
+            return .invalidActivity
         default:
             dump(response)
             return .unknown
