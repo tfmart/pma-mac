@@ -12,7 +12,7 @@ class ViewPresenter {
     static public let shared = ViewPresenter()
     private init() {}
     
-    let statusBar = EntryStatusBarItem()
+    let entryItem = EntryStatusBarItem()
     var presentedView: NSViewController? = nil
     
     @objc func presentEntryView() {
@@ -38,7 +38,7 @@ class ViewPresenter {
     
     private func popUp(_ viewController: NSViewController) {
         DispatchQueue.main.async {
-            let statusBarItem = self.statusBar.item
+            let statusBarItem = self.entryItem.item
             let popOverView = NSPopover()
             popOverView.contentViewController = viewController
             self.presentedView = viewController

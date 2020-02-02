@@ -12,7 +12,9 @@ class EntryStatusBarItem {
     let item = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     
     init() {
-        item.button?.title = "⏰"
+        let icon = NSImage(named: "statusBarIcon")
+        icon?.isTemplate = true
+        item.button?.image = icon
         item.button?.target = self
         item.action = #selector(statusItemClicked)
         item.button?.sendAction(on: [.leftMouseUp, .rightMouseUp])

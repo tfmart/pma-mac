@@ -12,9 +12,13 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        _ = ViewPresenter.shared.statusBar
+        let entryItem = ViewPresenter.shared.entryItem
+        let item = entryItem.item
+        item.isEnabled = false
         if SessionManager.shared.hasSession {
-            SessionManager.shared.performLogin {}
+            SessionManager.shared.performLogin {
+                DispatchQueue.main.async { item.isEnabled = true }
+            }
         } else {
             SessionManager.shared.displayLogin {}
         }

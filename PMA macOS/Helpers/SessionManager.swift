@@ -77,11 +77,19 @@ class SessionManager {
     ///   - success: Block that executes if login is succesful
     func displayLogin(title: String? = nil, message: String? = nil, success: @escaping () -> ()) {
         setupLoginAlert(title: title, message: message)
+        ViewPresenter.shared.entryItem.item.isEnabled = false
         let response = loginAlert.runModal()
         if response == .alertFirstButtonReturn {
             SessionManager.shared.newSession(username: SessionManager.shared.usernameTextField.stringValue,
                                              password: SessionManager.shared.passwordTextField.stringValue,
-                                             success: success)
+                                             success: {
+                                                DispatchQueue.main.async {
+                                                    ViewPresenter.shared.entryItem.item.isEnabled = true
+                                                }
+                                                success()
+            })
+        } else {
+            ViewPresenter.shared.entryItem.item.isEnabled = true
         }
     }
     
