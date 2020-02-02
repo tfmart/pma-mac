@@ -10,10 +10,12 @@ import Cocoa
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-    let entryStatusBar = EntryStatusBarItem()
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        _ = entryStatusBar.item
+        _ = ViewPresenter.shared.statusBar
+        if SessionHelper.shared.hasSession {
+            SessionHelper.shared.performLogin { }
+        }
     }
     
     func applicationWillTerminate(_ aNotification: Notification) {

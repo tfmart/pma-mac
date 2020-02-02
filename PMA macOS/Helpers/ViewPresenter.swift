@@ -36,10 +36,12 @@ class ViewPresenter {
     }
     
     private func popUp(_ viewController: NSViewController) {
-        let statusBarItem = self.statusBar.item
-        let popOverView = NSPopover()
-        popOverView.contentViewController = viewController
-        popOverView.behavior = .transient
-        popOverView.show(relativeTo: statusBarItem.button!.bounds, of: statusBarItem.button!, preferredEdge: .maxY)
+        DispatchQueue.main.async {
+            let statusBarItem = self.statusBar.item
+            let popOverView = NSPopover()
+            popOverView.contentViewController = viewController
+            popOverView.behavior = .transient
+            popOverView.show(relativeTo: statusBarItem.button!.bounds, of: statusBarItem.button!, preferredEdge: .maxY)
+        }
     }
 }
