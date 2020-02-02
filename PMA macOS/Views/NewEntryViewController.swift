@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  NewEntryViewController.swift
 //  PMA macOS
 //
 //  Created by Tomas Martins on 30/01/20.
@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class ViewController: NSViewController, NSTextFieldDelegate {
+class NewEntryViewController: NSViewController, NSTextFieldDelegate {
     
     //MARK: - IBOutlets
     @IBOutlet weak var startDayPicker: NSDatePicker!

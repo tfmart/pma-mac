@@ -13,7 +13,7 @@
 		0AAFD7A823E4A9AB00D9E0A6 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAFD7A723E4A9AB00D9E0A6 /* Entry.swift */; };
 		7C15845223E6266B00974CDC /* SessionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C15845123E6266B00974CDC /* SessionHelper.swift */; };
 		7C15D6D023E38414003595BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C15D6CF23E38414003595BF /* AppDelegate.swift */; };
-		7C15D6D223E38414003595BF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C15D6D123E38414003595BF /* ViewController.swift */; };
+		7C15D6D223E38414003595BF /* NewEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C15D6D123E38414003595BF /* NewEntryViewController.swift */; };
 		7C15D6D423E38418003595BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C15D6D323E38418003595BF /* Assets.xcassets */; };
 		7C15D6D723E38418003595BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C15D6D523E38418003595BF /* Main.storyboard */; };
 		7C15D6E123E3B1F5003595BF /* LoginRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C15D6E023E3B1F5003595BF /* LoginRequester.swift */; };
@@ -28,7 +28,7 @@
 		7C15845123E6266B00974CDC /* SessionHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionHelper.swift; sourceTree = "<group>"; };
 		7C15D6CC23E38414003595BF /* PMA macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PMA macOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C15D6CF23E38414003595BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7C15D6D123E38414003595BF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7C15D6D123E38414003595BF /* NewEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEntryViewController.swift; sourceTree = "<group>"; };
 		7C15D6D323E38418003595BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7C15D6D623E38418003595BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7C15D6D823E38418003595BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -81,8 +81,8 @@
 				7C15D6E323E3BC47003595BF /* Models */,
 				7C15D6E223E3BC3F003595BF /* Helpers */,
 				7C15D6DF23E3B1E8003595BF /* Requesters */,
+				7C343A6523E6815F0040D8E3 /* Views */,
 				7C15D6CF23E38414003595BF /* AppDelegate.swift */,
-				7C15D6D123E38414003595BF /* ViewController.swift */,
 				7C15D6D323E38418003595BF /* Assets.xcassets */,
 				7C15D6D523E38418003595BF /* Main.storyboard */,
 				7C15D6D823E38418003595BF /* Info.plist */,
@@ -96,7 +96,6 @@
 			children = (
 				7C15D6E023E3B1F5003595BF /* LoginRequester.swift */,
 				7C15D6E523E3BE1C003595BF /* NewEntryRequester.swift */,
-				7C343A6323E6785E0040D8E3 /* WelcomePopUp.swift */,
 			);
 			path = Requesters;
 			sourceTree = "<group>";
@@ -116,6 +115,15 @@
 				0AAFD7A723E4A9AB00D9E0A6 /* Entry.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		7C343A6523E6815F0040D8E3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7C343A6323E6785E0040D8E3 /* WelcomePopUp.swift */,
+				7C15D6D123E38414003595BF /* NewEntryViewController.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,7 +203,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0AAFD7A823E4A9AB00D9E0A6 /* Entry.swift in Sources */,
-				7C15D6D223E38414003595BF /* ViewController.swift in Sources */,
+				7C15D6D223E38414003595BF /* NewEntryViewController.swift in Sources */,
 				7C15D6D023E38414003595BF /* AppDelegate.swift in Sources */,
 				7C15D6E623E3BE1C003595BF /* NewEntryRequester.swift in Sources */,
 				7C15845223E6266B00974CDC /* SessionHelper.swift in Sources */,

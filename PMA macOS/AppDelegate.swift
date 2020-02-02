@@ -47,7 +47,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     private func presentEntryView() {
         DispatchQueue.main.async {
             let storyboard = NSStoryboard(name: "Main", bundle: nil)
-            guard let pmaViewController = storyboard.instantiateController(withIdentifier: "ViewController") as? ViewController else {
+            guard let pmaViewController = storyboard.instantiateController(withIdentifier: "ViewController") as? NewEntryViewController else {
                 fatalError("Unable to find PMA View Controller in the storyboard")
             }
             self.popUp(view: pmaViewController)
