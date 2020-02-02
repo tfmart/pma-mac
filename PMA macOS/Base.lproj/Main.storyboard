@@ -675,7 +675,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="PMA_macOS" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="PMA" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -684,33 +684,33 @@
         <!--New Entry View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController storyboardIdentifier="ViewController" id="XfG-lQ-9wD" customClass="NewEntryViewController" customModule="PMA_macOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="XfG-lQ-9wD" customClass="NewEntryViewController" customModule="PMA" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="332" height="438"/>
+                        <rect key="frame" x="0.0" y="0.0" width="342" height="394"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="CUF-HU-rib" userLabel="Username Label">
-                                <rect key="frame" x="225" y="402" width="91" height="16"/>
+                                <rect key="frame" x="235" y="358" width="91" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="tomas.martins" id="wPa-0s-HYe">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v9p-Uo-wxO" userLabel="Start">
-                                <rect key="frame" x="16" y="327" width="300" height="48"/>
+                            <stackView distribution="equalSpacing" orientation="horizontal" alignment="top" spacing="9" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v9p-Uo-wxO" userLabel="Start">
+                                <rect key="frame" x="16" y="283" width="310" height="48"/>
                                 <subviews>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="MWV-0q-E7E">
-                                        <rect key="frame" x="-2" y="32" width="36" height="16"/>
-                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Início" id="1ob-de-feB">
-                                            <font key="font" metaFont="system"/>
-                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                        </textFieldCell>
-                                    </textField>
-                                    <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="136" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UTM-JN-YpQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="292" height="24"/>
+                                    <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CZT-Wm-cvC">
+                                        <rect key="frame" x="0.0" y="0.0" width="97" height="48"/>
                                         <subviews>
+                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="MWV-0q-E7E" userLabel="Data">
+                                                <rect key="frame" x="-2" y="32" width="33" height="16"/>
+                                                <textFieldCell key="cell" lineBreakMode="clipping" title="Data" id="1ob-de-feB">
+                                                    <font key="font" metaFont="system"/>
+                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
                                             <datePicker verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Yod-KK-DBH">
                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="28"/>
                                                 <datePickerCell key="cell" borderStyle="bezel" alignment="left" id="FyG-Tu-fLo">
@@ -721,12 +721,30 @@
                                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 </datePickerCell>
-                                                <connections>
-                                                    <action selector="startDateChanged:" target="XfG-lQ-9wD" id="zfi-Qd-sd2"/>
-                                                </connections>
                                             </datePicker>
+                                        </subviews>
+                                        <visibilityPriorities>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                        </visibilityPriorities>
+                                        <customSpacing>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                        </customSpacing>
+                                    </stackView>
+                                    <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="diu-Yz-Xyj">
+                                        <rect key="frame" x="145" y="0.0" width="59" height="48"/>
+                                        <subviews>
+                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="psC-M7-OfM" userLabel="Início">
+                                                <rect key="frame" x="-2" y="32" width="36" height="16"/>
+                                                <textFieldCell key="cell" lineBreakMode="clipping" title="Início" id="Kix-7Y-g1Q">
+                                                    <font key="font" metaFont="system"/>
+                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
                                             <datePicker verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JfR-hE-XR9">
-                                                <rect key="frame" x="233" y="0.0" width="62" height="28"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="62" height="28"/>
                                                 <datePickerCell key="cell" borderStyle="bezel" alignment="left" id="SHm-FJ-Y4n">
                                                     <font key="font" metaFont="system"/>
                                                     <date key="date" timeIntervalSinceReferenceDate="-595947600">
@@ -738,9 +756,6 @@
                                                 </datePickerCell>
                                             </datePicker>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="Yod-KK-DBH" secondAttribute="bottom" id="6KS-45-H2A"/>
-                                        </constraints>
                                         <visibilityPriorities>
                                             <integer value="1000"/>
                                             <integer value="1000"/>
@@ -750,46 +765,19 @@
                                             <real value="3.4028234663852886e+38"/>
                                         </customSpacing>
                                     </stackView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="XjY-UY-xcp"/>
-                                </constraints>
-                                <visibilityPriorities>
-                                    <integer value="1000"/>
-                                    <integer value="1000"/>
-                                </visibilityPriorities>
-                                <customSpacing>
-                                    <real value="3.4028234663852886e+38"/>
-                                    <real value="3.4028234663852886e+38"/>
-                                </customSpacing>
-                            </stackView>
-                            <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TRN-Y1-EId" userLabel="End">
-                                <rect key="frame" x="16" y="271" width="300" height="48"/>
-                                <subviews>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ZlE-BU-Gs1">
-                                        <rect key="frame" x="-2" y="32" width="26" height="16"/>
-                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Fim" id="b0L-UU-cYP">
-                                            <font key="font" metaFont="system"/>
-                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                        </textFieldCell>
-                                    </textField>
-                                    <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="136" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aFB-mG-5v5">
-                                        <rect key="frame" x="0.0" y="0.0" width="292" height="24"/>
+                                    <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sOb-hO-WE1">
+                                        <rect key="frame" x="251" y="0.0" width="59" height="48"/>
                                         <subviews>
-                                            <datePicker verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4AY-a9-4mx">
-                                                <rect key="frame" x="0.0" y="0.0" width="100" height="28"/>
-                                                <datePickerCell key="cell" borderStyle="bezel" alignment="left" id="8nN-jq-Yyw">
+                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gpF-Rj-R8q" userLabel="Fim">
+                                                <rect key="frame" x="-2" y="32" width="26" height="16"/>
+                                                <textFieldCell key="cell" lineBreakMode="clipping" title="Fim" id="iyt-JD-TDE">
                                                     <font key="font" metaFont="system"/>
-                                                    <date key="date" timeIntervalSinceReferenceDate="-595929600">
-                                                        <!--1982-02-12 16:00:00 +0000-->
-                                                    </date>
-                                                    <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                </datePickerCell>
-                                            </datePicker>
+                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
                                             <datePicker verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qt1-kK-tdk">
-                                                <rect key="frame" x="233" y="0.0" width="62" height="28"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="62" height="28"/>
                                                 <datePickerCell key="cell" borderStyle="bezel" alignment="left" id="QDV-uG-pHa">
                                                     <font key="font" metaFont="system"/>
                                                     <date key="date" timeIntervalSinceReferenceDate="-595976400">
@@ -812,19 +800,21 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="nfR-aC-xhQ"/>
+                                    <constraint firstAttribute="height" constant="48" id="XjY-UY-xcp"/>
                                 </constraints>
                                 <visibilityPriorities>
+                                    <integer value="1000"/>
                                     <integer value="1000"/>
                                     <integer value="1000"/>
                                 </visibilityPriorities>
                                 <customSpacing>
                                     <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
                                 </customSpacing>
                             </stackView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Yj1-kd-zSz" userLabel="Project Label">
-                                <rect key="frame" x="14" y="247" width="304" height="16"/>
+                                <rect key="frame" x="14" y="247" width="314" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Projeto" id="hMl-tf-eMr">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -832,7 +822,7 @@
                                 </textFieldCell>
                             </textField>
                             <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="QdO-aD-fIH" userLabel="Project Picker">
-                                <rect key="frame" x="14" y="215" width="305" height="25"/>
+                                <rect key="frame" x="14" y="215" width="315" height="25"/>
                                 <popUpButtonCell key="cell" type="push" title="Dafiti: Squads Dafiti" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="4aS-WE-i6a" id="v3w-8j-GRZ">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -844,7 +834,7 @@
                                 </popUpButtonCell>
                             </popUpButton>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ott-dd-PRY" userLabel="Activity Label">
-                                <rect key="frame" x="14" y="182" width="304" height="16"/>
+                                <rect key="frame" x="14" y="182" width="314" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Atividade" id="5L8-1R-XcO">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -852,7 +842,7 @@
                                 </textFieldCell>
                             </textField>
                             <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ftw-3F-X3l" userLabel="Activity Picker">
-                                <rect key="frame" x="14" y="150" width="305" height="25"/>
+                                <rect key="frame" x="14" y="150" width="315" height="25"/>
                                 <popUpButtonCell key="cell" type="push" title="Desenvolvimento" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="gAi-F7-l7w" id="e2q-Di-yBi">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -864,7 +854,7 @@
                                 </popUpButtonCell>
                             </popUpButton>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hui-b5-ufE" userLabel="Description Text Field">
-                                <rect key="frame" x="16" y="69" width="300" height="60"/>
+                                <rect key="frame" x="16" y="69" width="310" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="zJJ-0r-Jvd"/>
                                 </constraints>
@@ -878,8 +868,8 @@
                                 </connections>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ADh-qq-MH9" userLabel="Save Button">
-                                <rect key="frame" x="10" y="17" width="312" height="32"/>
-                                <buttonCell key="cell" type="push" title="Salvar" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="dWk-Gj-f8U">
+                                <rect key="frame" x="10" y="17" width="322" height="32"/>
+                                <buttonCell key="cell" type="push" title="Apontar" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="dWk-Gj-f8U">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -888,7 +878,7 @@
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Axl-uV-6CU">
-                                <rect key="frame" x="14" y="380" width="75" height="38"/>
+                                <rect key="frame" x="14" y="336" width="75" height="38"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="PMA" id="Rwi-UP-3AZ">
                                     <font key="font" metaFont="systemBold" size="32"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -899,26 +889,25 @@
                         <constraints>
                             <constraint firstItem="ADh-qq-MH9" firstAttribute="top" secondItem="hui-b5-ufE" secondAttribute="bottom" constant="24" id="0tT-h3-F00"/>
                             <constraint firstItem="ott-dd-PRY" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="3eG-lF-lcO"/>
+                            <constraint firstItem="Yj1-kd-zSz" firstAttribute="top" secondItem="v9p-Uo-wxO" secondAttribute="bottom" constant="20" id="3nn-tQ-AuJ"/>
                             <constraint firstItem="v9p-Uo-wxO" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="16" id="4Vi-kK-WFk"/>
                             <constraint firstItem="ADh-qq-MH9" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="16" id="9EJ-ui-qw0"/>
                             <constraint firstItem="QdO-aD-fIH" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="16" id="Bys-WB-rX8"/>
                             <constraint firstItem="hui-b5-ufE" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="16" id="CUh-uB-qPR"/>
                             <constraint firstItem="ott-dd-PRY" firstAttribute="leading" secondItem="Ftw-3F-X3l" secondAttribute="leading" id="FNf-ZW-tJO"/>
-                            <constraint firstItem="Yj1-kd-zSz" firstAttribute="top" secondItem="TRN-Y1-EId" secondAttribute="bottom" constant="8" id="Ffl-zh-InL"/>
-                            <constraint firstItem="TRN-Y1-EId" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="G3B-if-9rr"/>
                             <constraint firstItem="Axl-uV-6CU" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="16" id="I9y-Ql-n7a"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Yj1-kd-zSz" secondAttribute="trailing" id="IxB-bA-Fjw"/>
                             <constraint firstItem="v9p-Uo-wxO" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="JFf-jS-Vl0"/>
-                            <constraint firstItem="TRN-Y1-EId" firstAttribute="top" secondItem="v9p-Uo-wxO" secondAttribute="bottom" constant="8" id="Kyn-lv-hl8"/>
                             <constraint firstAttribute="bottom" secondItem="ADh-qq-MH9" secondAttribute="bottom" constant="24" id="MNc-We-l7R"/>
                             <constraint firstItem="ott-dd-PRY" firstAttribute="top" secondItem="QdO-aD-fIH" secondAttribute="bottom" constant="20" id="Ol5-eG-wHB"/>
                             <constraint firstItem="CUF-HU-rib" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="Osh-ho-DZz"/>
                             <constraint firstItem="QdO-aD-fIH" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="P2j-jK-mzc"/>
+                            <constraint firstItem="CUF-HU-rib" firstAttribute="top" secondItem="Axl-uV-6CU" secondAttribute="top" id="PTw-Ve-oK6"/>
                             <constraint firstItem="Ftw-3F-X3l" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="T2i-np-Gm0"/>
                             <constraint firstItem="Yj1-kd-zSz" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="ZaF-NX-s0A"/>
                             <constraint firstItem="ADh-qq-MH9" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="bod-7V-smx"/>
+                            <constraint firstItem="v9p-Uo-wxO" firstAttribute="top" secondItem="Axl-uV-6CU" secondAttribute="bottom" constant="5" id="dPm-fB-s3T"/>
                             <constraint firstItem="hui-b5-ufE" firstAttribute="top" secondItem="Ftw-3F-X3l" secondAttribute="bottom" constant="24" id="eSa-F7-rHF"/>
-                            <constraint firstItem="TRN-Y1-EId" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="16" id="eu9-Y2-wrg"/>
                             <constraint firstItem="Yj1-kd-zSz" firstAttribute="leading" secondItem="QdO-aD-fIH" secondAttribute="leading" id="fhx-Jy-pVG"/>
                             <constraint firstItem="Ftw-3F-X3l" firstAttribute="top" secondItem="ott-dd-PRY" secondAttribute="bottom" constant="8" id="l2b-ZM-QsI"/>
                             <constraint firstItem="QdO-aD-fIH" firstAttribute="top" secondItem="Yj1-kd-zSz" secondAttribute="bottom" constant="8" id="lht-gG-q9o"/>
@@ -928,13 +917,11 @@
                             <constraint firstItem="hui-b5-ufE" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="otj-88-5ZQ"/>
                             <constraint firstItem="Ftw-3F-X3l" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="16" id="pKU-bg-Da6"/>
                             <constraint firstItem="CUF-HU-rib" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Axl-uV-6CU" secondAttribute="trailing" constant="8" symbolic="YES" id="wyc-J7-NCZ"/>
-                            <constraint firstItem="CUF-HU-rib" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="yhA-jn-xYe"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="acivityPicker" destination="Ftw-3F-X3l" id="aBP-aY-2ra"/>
                         <outlet property="descriptionTextField" destination="hui-b5-ufE" id="dm5-Vf-nvH"/>
-                        <outlet property="endDayPicker" destination="4AY-a9-4mx" id="AbP-Ja-WKI"/>
                         <outlet property="endTimePicker" destination="qt1-kK-tdk" id="wUs-Rf-cOI"/>
                         <outlet property="projectPicker" destination="QdO-aD-fIH" id="yvD-iO-TSX"/>
                         <outlet property="saveButton" destination="ADh-qq-MH9" id="eTT-31-XBA"/>
@@ -945,12 +932,12 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="14" y="304"/>
+            <point key="canvasLocation" x="-75" y="304"/>
         </scene>
         <!--Welcome Pop Up-->
         <scene sceneID="R4O-Gd-nI1">
             <objects>
-                <viewController storyboardIdentifier="welcomePopUp" id="xAD-g9-u7Q" customClass="WelcomePopUp" customModule="PMA_macOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="welcomePopUp" id="xAD-g9-u7Q" customClass="WelcomePopUp" customModule="PMA" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="E4b-Ko-A15">
                         <rect key="frame" x="0.0" y="0.0" width="400" height="83"/>
                         <autoresizingMask key="autoresizingMask"/>

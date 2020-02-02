@@ -13,7 +13,6 @@ class NewEntryViewController: NSViewController, NSTextFieldDelegate {
     //MARK: - IBOutlets
     @IBOutlet weak var startDayPicker: NSDatePicker!
     @IBOutlet weak var startTimePicker: NSDatePicker!
-    @IBOutlet weak var endDayPicker: NSDatePicker!
     @IBOutlet weak var endTimePicker: NSDatePicker!
     @IBOutlet weak var projectPicker: NSPopUpButton!
     @IBOutlet weak var acivityPicker: NSPopUpButton!
@@ -27,7 +26,7 @@ class NewEntryViewController: NSViewController, NSTextFieldDelegate {
     //MARK: - IBActions
     @IBAction func saveButtonClicked(_ sender: Any) {
         let startDate = "\(startDayPicker.dateValue.day)%20\(startTimePicker.dateValue.time)"
-        let endDate = "\(endDayPicker.dateValue.day)%20\(endTimePicker.dateValue.time)"
+        let endDate = "\(startDayPicker.dateValue.day)%20\(endTimePicker.dateValue.time)"
         let description = descriptionTextField.stringValue.replacingOccurrences(of: " ", with: "%20")
         let newEntryRequester = NewEntryRequester(start: startDate, end: endDate,
                                                   projectID: 959, activityID: 8915,
@@ -51,12 +50,6 @@ class NewEntryViewController: NSViewController, NSTextFieldDelegate {
                                                     }
         }
         newEntryRequester.start()
-    }
-    
-    @IBAction func startDateChanged(_ sender: Any) {
-        if endDayPicker.dateValue < startDayPicker.dateValue {
-            endDayPicker.dateValue = startDayPicker.dateValue
-        }
     }
     
     //MARK: - Life Cycle
@@ -89,7 +82,6 @@ class NewEntryViewController: NSViewController, NSTextFieldDelegate {
         let startTimeValue = startTimePicker.dateValue
         startDayPicker.dateValue = EntryManager.day ?? Date()
         startTimePicker.dateValue = EntryManager.starTime ?? startTimeValue
-        endDayPicker.dateValue = EntryManager.day ?? Date()
         endTimePicker.dateValue = EntryManager.endTime ?? Date()
         descriptionTextField.stringValue = EntryManager.description ?? ""
     }

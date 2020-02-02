@@ -60,7 +60,7 @@ class EntryStatusBarItem {
         sessionMenuItem.target = self
         rightClickMenu.addItem(sessionMenuItem)
         rightClickMenu.addItem(NSMenuItem.separator())
-        rightClickMenu.addItem(NSMenuItem(title: "Encerrar o PMA", action: #selector(NSApplication.terminate(_:)), keyEquivalent: ""))
+        rightClickMenu.addItem(NSMenuItem(title: "Encerrar PMA", action: #selector(NSApplication.terminate(_:)), keyEquivalent: ""))
         return rightClickMenu
     }
     

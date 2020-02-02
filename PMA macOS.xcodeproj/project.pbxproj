@@ -29,7 +29,7 @@
 		0AAFD7A223E458C500D9E0A6 /* PMAError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PMAError.swift; path = "PMA macOS/Extensions/PMAError.swift"; sourceTree = SOURCE_ROOT; };
 		0AAFD7A723E4A9AB00D9E0A6 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Entry.swift; path = "PMA macOS/Extensions/Entry.swift"; sourceTree = SOURCE_ROOT; };
 		7C15845123E6266B00974CDC /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
-		7C15D6CC23E38414003595BF /* PMA macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PMA macOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C15D6CC23E38414003595BF /* PMA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PMA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C15D6CF23E38414003595BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C15D6D123E38414003595BF /* NewEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEntryViewController.swift; sourceTree = "<group>"; };
 		7C15D6D323E38418003595BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -75,7 +75,7 @@
 		7C15D6CD23E38414003595BF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7C15D6CC23E38414003595BF /* PMA macOS.app */,
+				7C15D6CC23E38414003595BF /* PMA.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -138,9 +138,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7C15D6CB23E38414003595BF /* PMA macOS */ = {
+		7C15D6CB23E38414003595BF /* PMA */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7C15D6DC23E38418003595BF /* Build configuration list for PBXNativeTarget "PMA macOS" */;
+			buildConfigurationList = 7C15D6DC23E38418003595BF /* Build configuration list for PBXNativeTarget "PMA" */;
 			buildPhases = (
 				7C15D6C823E38414003595BF /* Sources */,
 				7C15D6C923E38414003595BF /* Frameworks */,
@@ -150,12 +150,12 @@
 			);
 			dependencies = (
 			);
-			name = "PMA macOS";
+			name = PMA;
 			packageProductDependencies = (
 				0AAFD7A523E4A08C00D9E0A6 /* SwiftSoup */,
 			);
 			productName = "PMA macOS";
-			productReference = 7C15D6CC23E38414003595BF /* PMA macOS.app */;
+			productReference = 7C15D6CC23E38414003595BF /* PMA.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -189,7 +189,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7C15D6CB23E38414003595BF /* PMA macOS */,
+				7C15D6CB23E38414003595BF /* PMA */,
 			);
 		};
 /* End PBXProject section */
@@ -368,6 +368,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "tfmartins.PMA-macOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -389,6 +390,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "tfmartins.PMA-macOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -407,7 +409,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7C15D6DC23E38418003595BF /* Build configuration list for PBXNativeTarget "PMA macOS" */ = {
+		7C15D6DC23E38418003595BF /* Build configuration list for PBXNativeTarget "PMA" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7C15D6DD23E38418003595BF /* Debug */,
