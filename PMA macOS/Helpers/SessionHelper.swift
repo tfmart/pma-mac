@@ -61,6 +61,13 @@ class SessionHelper {
         requester.start()
     }
     
+    /// Removes all locally stored data about the user's session
+    @objc func endSession() {
+        UserDefaults.standard.set(false, forKey: "hasSession")
+        UserDefaults.standard.removeObject(forKey: "username")
+        UserDefaults.standard.removeObject(forKey: "password")
+    }
+    
     //MARK: - Display Alert Methods
     /// Displays a login alert
     /// - Parameters:

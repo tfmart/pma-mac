@@ -19,6 +19,8 @@
 		7C15D6E123E3B1F5003595BF /* LoginRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C15D6E023E3B1F5003595BF /* LoginRequester.swift */; };
 		7C15D6E623E3BE1C003595BF /* NewEntryRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C15D6E523E3BE1C003595BF /* NewEntryRequester.swift */; };
 		7C343A6423E6785E0040D8E3 /* WelcomePopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C343A6323E6785E0040D8E3 /* WelcomePopUp.swift */; };
+		7CB449A123E7170D001A4B23 /* EntryStatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB449A023E7170D001A4B23 /* EntryStatusBar.swift */; };
+		7CB449A323E71D98001A4B23 /* ViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB449A223E71D98001A4B23 /* ViewPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		7C15D6E023E3B1F5003595BF /* LoginRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequester.swift; sourceTree = "<group>"; };
 		7C15D6E523E3BE1C003595BF /* NewEntryRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEntryRequester.swift; sourceTree = "<group>"; };
 		7C343A6323E6785E0040D8E3 /* WelcomePopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePopUp.swift; sourceTree = "<group>"; };
+		7CB449A023E7170D001A4B23 /* EntryStatusBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryStatusBar.swift; sourceTree = "<group>"; };
+		7CB449A223E71D98001A4B23 /* ViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +91,7 @@
 				7C15D6D523E38418003595BF /* Main.storyboard */,
 				7C15D6D823E38418003595BF /* Info.plist */,
 				7C15D6D923E38418003595BF /* PMA_macOS.entitlements */,
+				7CB449A023E7170D001A4B23 /* EntryStatusBar.swift */,
 			);
 			path = "PMA macOS";
 			sourceTree = "<group>";
@@ -105,6 +110,7 @@
 			children = (
 				0AAFD7A223E458C500D9E0A6 /* PMAError.swift */,
 				7C15845123E6266B00974CDC /* SessionHelper.swift */,
+				7CB449A223E71D98001A4B23 /* ViewPresenter.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -206,11 +212,13 @@
 				7C15D6D223E38414003595BF /* NewEntryViewController.swift in Sources */,
 				7C15D6D023E38414003595BF /* AppDelegate.swift in Sources */,
 				7C15D6E623E3BE1C003595BF /* NewEntryRequester.swift in Sources */,
+				7CB449A123E7170D001A4B23 /* EntryStatusBar.swift in Sources */,
 				7C15845223E6266B00974CDC /* SessionHelper.swift in Sources */,
 				0AAFD7A323E458C500D9E0A6 /* PMAError.swift in Sources */,
 				0AAFD7A123E44BF000D9E0A6 /* Date+String.swift in Sources */,
 				7C343A6423E6785E0040D8E3 /* WelcomePopUp.swift in Sources */,
 				7C15D6E123E3B1F5003595BF /* LoginRequester.swift in Sources */,
+				7CB449A323E71D98001A4B23 /* ViewPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
