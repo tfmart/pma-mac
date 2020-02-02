@@ -692,7 +692,7 @@
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="CUF-HU-rib" userLabel="Username Label">
                                 <rect key="frame" x="225" y="402" width="91" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="tomas.martins" id="wPa-0s-HYe">
-                                    <font key="font" metaFont="label" size="13"/>
+                                    <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -703,7 +703,7 @@
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="MWV-0q-E7E">
                                         <rect key="frame" x="-2" y="32" width="36" height="16"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" title="Início" id="1ob-de-feB">
-                                            <font key="font" metaFont="label" size="13"/>
+                                            <font key="font" metaFont="system"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
@@ -714,7 +714,7 @@
                                             <datePicker verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Yod-KK-DBH">
                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="28"/>
                                                 <datePickerCell key="cell" borderStyle="bezel" alignment="left" id="FyG-Tu-fLo">
-                                                    <font key="font" metaFont="label" size="13"/>
+                                                    <font key="font" metaFont="system"/>
                                                     <date key="date" timeIntervalSinceReferenceDate="-595929600">
                                                         <!--1982-02-12 16:00:00 +0000-->
                                                     </date>
@@ -728,7 +728,7 @@
                                             <datePicker verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JfR-hE-XR9">
                                                 <rect key="frame" x="233" y="0.0" width="62" height="28"/>
                                                 <datePickerCell key="cell" borderStyle="bezel" alignment="left" id="SHm-FJ-Y4n">
-                                                    <font key="font" metaFont="label" size="13"/>
+                                                    <font key="font" metaFont="system"/>
                                                     <date key="date" timeIntervalSinceReferenceDate="-595976400">
                                                         <!--1982-02-12 03:00:00 +0000-->
                                                     </date>
@@ -769,7 +769,7 @@
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ZlE-BU-Gs1">
                                         <rect key="frame" x="-2" y="32" width="26" height="16"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" title="Fim" id="b0L-UU-cYP">
-                                            <font key="font" metaFont="label" size="13"/>
+                                            <font key="font" metaFont="system"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
@@ -780,7 +780,7 @@
                                             <datePicker verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4AY-a9-4mx">
                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="28"/>
                                                 <datePickerCell key="cell" borderStyle="bezel" alignment="left" id="8nN-jq-Yyw">
-                                                    <font key="font" metaFont="label" size="13"/>
+                                                    <font key="font" metaFont="system"/>
                                                     <date key="date" timeIntervalSinceReferenceDate="-595929600">
                                                         <!--1982-02-12 16:00:00 +0000-->
                                                     </date>
@@ -791,7 +791,7 @@
                                             <datePicker verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qt1-kK-tdk">
                                                 <rect key="frame" x="233" y="0.0" width="62" height="28"/>
                                                 <datePickerCell key="cell" borderStyle="bezel" alignment="left" id="QDV-uG-pHa">
-                                                    <font key="font" metaFont="label" size="13"/>
+                                                    <font key="font" metaFont="system"/>
                                                     <date key="date" timeIntervalSinceReferenceDate="-595976400">
                                                         <!--1982-02-12 03:00:00 +0000-->
                                                     </date>
@@ -826,7 +826,7 @@
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Yj1-kd-zSz" userLabel="Project Label">
                                 <rect key="frame" x="14" y="247" width="304" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Projeto" id="hMl-tf-eMr">
-                                    <font key="font" metaFont="label" size="13"/>
+                                    <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -834,13 +834,11 @@
                             <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="QdO-aD-fIH" userLabel="Project Picker">
                                 <rect key="frame" x="14" y="215" width="305" height="25"/>
                                 <popUpButtonCell key="cell" type="push" title="Dafiti: Squads Dafiti" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="4aS-WE-i6a" id="v3w-8j-GRZ">
-                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="label" size="13"/>
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
                                     <menu key="menu" id="Jd2-cd-a5Y">
                                         <items>
                                             <menuItem title="Dafiti: Squads Dafiti" state="on" id="4aS-WE-i6a"/>
-                                            <menuItem title="Item 2" id="HAq-2e-Bwt"/>
-                                            <menuItem title="Item 3" id="k0D-Ya-djm"/>
                                         </items>
                                     </menu>
                                 </popUpButtonCell>
@@ -848,7 +846,7 @@
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ott-dd-PRY" userLabel="Activity Label">
                                 <rect key="frame" x="14" y="182" width="304" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Atividade" id="5L8-1R-XcO">
-                                    <font key="font" metaFont="label" size="13"/>
+                                    <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -857,12 +855,10 @@
                                 <rect key="frame" x="14" y="150" width="305" height="25"/>
                                 <popUpButtonCell key="cell" type="push" title="Desenvolvimento" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="gAi-F7-l7w" id="e2q-Di-yBi">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="label" size="13"/>
+                                    <font key="font" metaFont="system"/>
                                     <menu key="menu" id="ry8-jk-dT7">
                                         <items>
                                             <menuItem title="Desenvolvimento" state="on" id="gAi-F7-l7w"/>
-                                            <menuItem title="Item 2" id="jcC-yj-Rar"/>
-                                            <menuItem title="Item 3" id="EB1-4q-P7z"/>
                                         </items>
                                     </menu>
                                 </popUpButtonCell>
@@ -885,7 +881,7 @@
                                 <rect key="frame" x="10" y="17" width="312" height="32"/>
                                 <buttonCell key="cell" type="push" title="Salvar" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="dWk-Gj-f8U">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="label" size="13"/>
+                                    <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
                                     <action selector="saveButtonClicked:" target="XfG-lQ-9wD" id="s0D-57-krZ"/>
@@ -973,7 +969,7 @@
                                     <constraint firstAttribute="height" constant="32" id="hbj-0N-fgX"/>
                                 </constraints>
                                 <textFieldCell key="cell" title="Clique no ícone acima para criar o seu primeiro apontamento" id="doo-JB-qxB">
-                                    <font key="font" metaFont="label" size="13"/>
+                                    <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -991,7 +987,7 @@
                 </viewController>
                 <customObject id="WwK-cs-Zlh" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="400" y="127"/>
+            <point key="canvasLocation" x="400" y="126.5"/>
         </scene>
     </scenes>
 </document>
