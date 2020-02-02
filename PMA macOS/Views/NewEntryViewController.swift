@@ -41,7 +41,7 @@ class NewEntryViewController: NSViewController, NSTextFieldDelegate {
                                                         }
                                                         self.displayNotification()
                                                         EntryManager.saveDraft(date: self.startDayPicker.dateValue, starTime: self.startTimePicker.dateValue, endTime: self.endTimePicker.dateValue, description: self.descriptionTextField.stringValue)
-                                                        ViewPresenter.shared.dismiss()
+                                                        self.view.window?.performClose(sender)
                                                     }
         }
         newEntryRequester.start()

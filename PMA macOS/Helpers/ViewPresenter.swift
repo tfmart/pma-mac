@@ -46,9 +46,4 @@ class ViewPresenter {
             popOverView.show(relativeTo: statusBarItem.button!.bounds, of: statusBarItem.button!, preferredEdge: .maxY)
         }
     }
-    
-    func dismiss() {
-        guard let presentedView = self.presentedView else { return }
-        presentedView.dismiss(presentedView)
-    }
 }
