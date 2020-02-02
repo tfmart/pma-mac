@@ -67,6 +67,7 @@ class SessionManager {
         UserDefaults.standard.removeObject(forKey: "username")
         UserDefaults.standard.removeObject(forKey: "password")
         HTTPCookieStorage.shared.cookies?.forEach(HTTPCookieStorage.shared.deleteCookie)
+        EntryManager.clearDraft()
     }
     
     //MARK: - Display Alert Methods

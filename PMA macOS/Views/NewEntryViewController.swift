@@ -45,7 +45,6 @@ class NewEntryViewController: NSViewController, NSTextFieldDelegate {
                                                         }
                                                         self.displayNotification()
                                                         self.hasCreatedEntry = true
-                                                        EntryManager.clearDraft()
                                                         self.view.window?.performClose(sender)
                                                     }
         }
@@ -62,7 +61,10 @@ class NewEntryViewController: NSViewController, NSTextFieldDelegate {
     override func viewWillDisappear() {
         if !hasCreatedEntry {
             EntryManager.saveDraft(date: self.startDayPicker.dateValue, starTime: self.startTimePicker.dateValue, endTime: self.endTimePicker.dateValue, description: self.descriptionTextField.stringValue)
+        } else {
+            EntryManager.clearDraft()
         }
+        
     }
     
     //MARK: - Methods
