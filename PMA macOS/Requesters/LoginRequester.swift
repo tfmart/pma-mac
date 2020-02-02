@@ -36,7 +36,7 @@ class LoginRequester {
             switch responseString {
             case "Usuario e/ou senha inválidos":
                 self.completion(nil, .invalidCredentials)
-            case "Login e senha são obrigatorios":
+            case "Login e senha são obrigatorios", "Login deve estar no formato \'nome.sobrenome\'":
                 self.completion(nil, .missingLoginField)
             default:
                 self.completion(responseString, nil)
