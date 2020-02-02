@@ -21,6 +21,9 @@ class NewEntryViewController: NSViewController, NSTextFieldDelegate {
     @IBOutlet weak var saveButton: NSButton!
     @IBOutlet weak var usernameLabel: NSTextField!
     
+    //MARK: - Properties
+    var hasCreatedEntry: Bool = true
+    
     //MARK: - IBActions
     @IBAction func saveButtonClicked(_ sender: Any) {
         let startDate = "\(startDayPicker.dateValue.day)%20\(startTimePicker.dateValue.time)"
@@ -31,6 +34,8 @@ class NewEntryViewController: NSViewController, NSTextFieldDelegate {
                                                   description: description) { (entry, error) in
                                                     DispatchQueue.main.async {
                                                         guard error == nil else {
+                                                            self.hasCreatedEntry = false
+                                                            EntryManager.saveDraft(date: self.startDayPicker.dateValue, starTime: self.startTimePicker.dateValue, endTime: self.endTimePicker.dateValue, description: self.descriptionTextField.stringValue)
                                                             if error == .expiredSession {
                                                                 UserDefaults.standard.set(false, forKey: "hasSession")
                                                                 SessionManager.shared.displayLogin(message: error?.rawValue) {}
@@ -40,7 +45,8 @@ class NewEntryViewController: NSViewController, NSTextFieldDelegate {
                                                             return
                                                         }
                                                         self.displayNotification()
-                                                        EntryManager.saveDraft(date: self.startDayPicker.dateValue, starTime: self.startTimePicker.dateValue, endTime: self.endTimePicker.dateValue, description: self.descriptionTextField.stringValue)
+                                                        self.hasCreatedEntry = true
+                                                        EntryManager.clearDraft()
                                                         self.view.window?.performClose(sender)
                                                     }
         }
@@ -61,7 +67,7 @@ class NewEntryViewController: NSViewController, NSTextFieldDelegate {
     }
     
     override func viewWillDisappear() {
-        if /*failed to submit new entry*/ true {
+        if !hasCreatedEntry {
             EntryManager.saveDraft(date: self.startDayPicker.dateValue, starTime: self.startTimePicker.dateValue, endTime: self.endTimePicker.dateValue, description: self.descriptionTextField.stringValue)
         }
     }
