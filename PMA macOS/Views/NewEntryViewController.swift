@@ -33,7 +33,7 @@ class NewEntryViewController: NSViewController, NSTextFieldDelegate {
                                                         guard error == nil else {
                                                             if error == .expiredSession {
                                                                 UserDefaults.standard.set(false, forKey: "hasSession")
-                                                                SessionHelper.shared.displayLogin(message: error?.rawValue) {}
+                                                                SessionManager.shared.displayLogin(message: error?.rawValue) {}
                                                             } else {
                                                                 self.displayNotification(with: error)
                                                             }
@@ -56,7 +56,7 @@ class NewEntryViewController: NSViewController, NSTextFieldDelegate {
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.usernameLabel.stringValue = SessionHelper.shared.username
+        self.usernameLabel.stringValue = SessionManager.shared.username
         pickersInitialSetup()
     }
     

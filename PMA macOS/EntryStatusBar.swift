@@ -30,11 +30,11 @@ class EntryStatusBarItem {
             item.popUpMenu(rightClickMenu)
             item.menu = nil
         } else {
-            if SessionHelper.shared.hasSession {
+            if SessionManager.shared.hasSession {
                 ViewPresenter.shared.presentEntryView()
             } else {
-                SessionHelper.shared.displayLogin {
-                    if !SessionHelper.shared.isPreviousUser {
+                SessionManager.shared.displayLogin {
+                    if !SessionManager.shared.isPreviousUser {
                         ViewPresenter.shared.presentWelcomeView()
                         UserDefaults.standard.set(true, forKey: "isPreviousUser")
                     } else {
@@ -49,8 +49,8 @@ class EntryStatusBarItem {
     private func setupRightClickMenu() -> NSMenu {
         let rightClickMenu = NSMenu()
         var sessionMenuItem: NSMenuItem
-        if SessionHelper.shared.hasSession {
-            rightClickMenu.addItem(NSMenuItem(title: "Logado como: \(SessionHelper.shared.username)", action: nil, keyEquivalent: ""))
+        if SessionManager.shared.hasSession {
+            rightClickMenu.addItem(NSMenuItem(title: "Logado como: \(SessionManager.shared.username)", action: nil, keyEquivalent: ""))
             sessionMenuItem = NSMenuItem(title: "Finalizar sessão", action: #selector(endSession), keyEquivalent: "")
         } else {
             sessionMenuItem = NSMenuItem(title: "Iniciar sessão", action: #selector(startSession), keyEquivalent: "")
@@ -63,10 +63,10 @@ class EntryStatusBarItem {
     }
     
     @objc func endSession() {
-        SessionHelper.shared.endSession()
+        SessionManager.shared.endSession()
     }
     
     @objc func startSession() {
-        SessionHelper.shared.displayLogin { }
+        SessionManager.shared.displayLogin { }
     }
 }

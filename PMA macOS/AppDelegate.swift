@@ -13,8 +13,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         _ = ViewPresenter.shared.statusBar
-        if SessionHelper.shared.hasSession {
-            SessionHelper.shared.performLogin { }
+        if SessionManager.shared.hasSession {
+            SessionManager.shared.performLogin { }
         }
     }
     

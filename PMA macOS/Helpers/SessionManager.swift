@@ -1,5 +1,5 @@
 //
-//  SessionHelper.swift
+//  SessionManager.swift
 //  PMA macOS
 //
 //  Created by Tomas Martins on 01/02/20.
@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class SessionHelper {
+class SessionManager {
     //MARK: - Properties
     var username: String = UserDefaults.standard.string(forKey: "username") ?? ""
     private var password: String = UserDefaults.standard.string(forKey: "password") ?? ""
@@ -27,7 +27,7 @@ class SessionHelper {
         return UserDefaults.standard.bool(forKey: "isPreviousUser")
     }
     
-    static public let shared = SessionHelper()
+    static public let shared = SessionManager()
     private init() {}
     
     //MARK: - Session methods
@@ -78,8 +78,8 @@ class SessionHelper {
         setupLoginAlert(title: title, message: message)
         let response = loginAlert.runModal()
         if response == .alertFirstButtonReturn {
-            SessionHelper.shared.newSession(username: SessionHelper.shared.usernameTextField.stringValue,
-                                             password: SessionHelper.shared.passwordTextField.stringValue,
+            SessionManager.shared.newSession(username: SessionManager.shared.usernameTextField.stringValue,
+                                             password: SessionManager.shared.passwordTextField.stringValue,
                                              success: success)
         }
     }
