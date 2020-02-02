@@ -47,7 +47,7 @@ class SessionManager {
     /// - Parameter success: Block that executes if login is successful
     func performLogin(success: @escaping () -> ()) {
         let requester = LoginRequester(username: self.username, password: self.password) { (message, error) in
-            if let error  = error {
+            if let error = error {
                 DispatchQueue.main.async {
                     self.displayLogin(title: "Falha ao logar", message: error.rawValue, success: success)
                 }
@@ -66,6 +66,7 @@ class SessionManager {
         UserDefaults.standard.set(false, forKey: "hasSession")
         UserDefaults.standard.removeObject(forKey: "username")
         UserDefaults.standard.removeObject(forKey: "password")
+        HTTPCookieStorage.shared.cookies?.forEach(HTTPCookieStorage.shared.deleteCookie)
     }
     
     //MARK: - Display Alert Methods

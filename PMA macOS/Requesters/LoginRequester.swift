@@ -32,7 +32,10 @@ class LoginRequester {
                 self.completion(nil, .noData)
                 return
             }
-            let responseString = String(data: data, encoding: String.Encoding.utf8)
+            guard let responseString = String(data: data, encoding: String.Encoding.utf8) else {
+                self.completion(nil, .decodeError)
+                return
+            }
             switch responseString {
             case "Usuario e/ou senha inválidos":
                 self.completion(nil, .invalidCredentials)

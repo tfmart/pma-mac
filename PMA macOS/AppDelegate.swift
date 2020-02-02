@@ -14,7 +14,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         _ = ViewPresenter.shared.statusBar
         if SessionManager.shared.hasSession {
-            SessionManager.shared.performLogin { }
+            SessionManager.shared.performLogin {}
+        } else {
+            SessionManager.shared.displayLogin {}
         }
     }
     
