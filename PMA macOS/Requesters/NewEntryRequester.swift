@@ -90,6 +90,10 @@ class NewEntryRequester {
             return .noTimeDifference
         case _ where response.hasPrefix(" O apontamento não corresponde a nenhuma etapa cadastrada no projeto"):
             return .invalidActivity
+        case " Apontamentos fora do periodo válido só poderão ser criados, alterados ou removidos com desbloqueio. Para efetuar o desbloqueio procure o seu GP. Em caso de dúvidas procure o RH.":
+            return .invalidPeriod
+        case "Data futura. N&atilde;o &eacute; poss&iacute;vel fazer apontamentos futuros.":
+            return .futureDate
         default:
             dump(response)
             return .unknown

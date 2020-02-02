@@ -23,6 +23,8 @@ enum PMAError: String, Error {
     case invalidEndTime = "Fim  precisa pertencer a intervalos de 5 minutos."
     case noTimeDifference = " Esforço deve ser maior que 0."
     case invalidActivity = "O apontamento não corresponde a nenhuma etapa cadastrada no projeto. Procure seu gerente, ou responsável."
+    case invalidPeriod = "Apontamentos fora do periodo válido só poderão ser criados, alterados ou removidos com desbloqueio. Para efetuar o desbloqueio procure o seu GP. Em caso de dúvidas procure o RH."
+    case futureDate = "Não é possível fazer apontamentos futuros."
     //MARK: - General
     case noData = "Verifique a sua conexão com a internet"
     case decodeError
