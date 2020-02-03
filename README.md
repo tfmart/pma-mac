@@ -1,11 +1,11 @@
 # PMA for macOS
 <img src="https://user-images.githubusercontent.com/23082132/73617871-d45d0900-4601-11ea-9a82-6e8b7c05b9b0.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" />
 
-**[Primeira release (v0.1) já está disponível, confira as releasese notes](https://github.com/tfmart/pma-mac/releases/tag/v0.1)**
+**[Primeira release (v0.1) já está disponível, confira as release notes](https://github.com/tfmart/pma-mac/releases/tag/v0.1)**
 
 ![ezgif-5-76a6e9c79814](https://user-images.githubusercontent.com/23082132/73619902-286dea80-460e-11ea-9333-42968a05ead5.gif)
 
-O PMA for macOS adiciona um atalho na sua status bar para que você possa criar os seus rapidamente! Basta clicar no ícone, preencher os dados como você já esta acostumado pelo site e pronto!
+O PMA for macOS adiciona um atalho na sua status bar para que você possa criar os seus apontamentos rapidamente! Basta clicar no ícone, preencher os dados como você já esta acostumado pelo site e pronto!
 
 # Atenção ⚠️
 
