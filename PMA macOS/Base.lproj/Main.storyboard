@@ -823,12 +823,12 @@
                             </textField>
                             <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="QdO-aD-fIH" userLabel="Project Picker">
                                 <rect key="frame" x="14" y="215" width="315" height="25"/>
-                                <popUpButtonCell key="cell" type="push" title="Capacitação Interna" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="4aS-WE-i6a" id="v3w-8j-GRZ">
+                                <popUpButtonCell key="cell" type="push" title="Dafiti" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="4aS-WE-i6a" id="v3w-8j-GRZ">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                     <menu key="menu" id="Jd2-cd-a5Y">
                                         <items>
-                                            <menuItem title="Capacitação Interna" state="on" id="4aS-WE-i6a"/>
+                                            <menuItem title="Dafiti" state="on" id="4aS-WE-i6a"/>
                                         </items>
                                     </menu>
                                 </popUpButtonCell>
@@ -843,12 +843,12 @@
                             </textField>
                             <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ftw-3F-X3l" userLabel="Activity Picker">
                                 <rect key="frame" x="14" y="150" width="315" height="25"/>
-                                <popUpButtonCell key="cell" type="push" title="Mentoria" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="gAi-F7-l7w" id="e2q-Di-yBi">
+                                <popUpButtonCell key="cell" type="push" title="Desenvolvimento" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="gAi-F7-l7w" id="e2q-Di-yBi">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                     <menu key="menu" id="ry8-jk-dT7">
                                         <items>
-                                            <menuItem title="Mentoria" state="on" id="gAi-F7-l7w"/>
+                                            <menuItem title="Desenvolvimento" state="on" id="gAi-F7-l7w"/>
                                         </items>
                                     </menu>
                                 </popUpButtonCell>
