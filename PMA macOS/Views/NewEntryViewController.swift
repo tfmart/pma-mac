@@ -21,7 +21,7 @@ class NewEntryViewController: NSViewController, NSTextFieldDelegate {
     @IBOutlet weak var usernameLabel: NSTextField!
     
     //MARK: - Properties
-    var hasCreatedEntry: Bool = true
+    var hasCreatedEntry: Bool = false
     
     //MARK: - IBActions
     @IBAction func saveButtonClicked(_ sender: Any) {
@@ -45,6 +45,7 @@ class NewEntryViewController: NSViewController, NSTextFieldDelegate {
                                                         }
                                                         self.displayNotification()
                                                         self.hasCreatedEntry = true
+                                                        UserDefaults.standard.set(true, forKey: "nextEntry")
                                                         self.view.window?.performClose(sender)
                                                     }
         }
@@ -59,12 +60,16 @@ class NewEntryViewController: NSViewController, NSTextFieldDelegate {
     }
     
     override func viewWillDisappear() {
-        if !hasCreatedEntry {
+        let state = EntryManager.shouldSaveDraft(didCreate: self.hasCreatedEntry)
+        switch state{
+        case .saveDraft:
             EntryManager.saveDraft(date: self.startDayPicker.dateValue, starTime: self.startTimePicker.dateValue, endTime: self.endTimePicker.dateValue, description: self.descriptionTextField.stringValue)
-        } else {
+        case .discardDraft:
             EntryManager.clearDraft()
+            UserDefaults.standard.set(false, forKey: "nextEntry")
+        case .prepareNextEntry:
+            EntryManager.prepareForNextEntry(date: self.startDayPicker.dateValue, time: self.endTimePicker.dateValue)
         }
-        
     }
     
     //MARK: - Methods
