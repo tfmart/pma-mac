@@ -27,10 +27,10 @@ class NewEntryViewController: NSViewController, NSTextFieldDelegate {
     @IBAction func saveButtonClicked(_ sender: Any) {
         let startDate = "\(startDayPicker.dateValue.day)%20\(startTimePicker.dateValue.time)"
         let endDate = "\(startDayPicker.dateValue.day)%20\(endTimePicker.dateValue.time)"
-        let description = descriptionTextField.stringValue.replacingOccurrences(of: " ", with: "%20")
+        let description = descriptionTextField.stringValue.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
         let newEntryRequester = NewEntryRequester(start: startDate, end: endDate,
                                                   projectID: 959, activityID: 8915,
-                                                  description: description) { (entry, error) in
+                                                  description: description ?? "") { (entry, error) in
                                                     DispatchQueue.main.async {
                                                         guard error == nil else {
                                                             self.hasCreatedEntry = false
