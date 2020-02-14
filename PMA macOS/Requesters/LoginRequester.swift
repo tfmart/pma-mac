@@ -22,8 +22,9 @@ class LoginRequester {
     }
     
     func start() {
-        guard let username = self.username, let password = self.password else { return }
-        let url = URL(string: "https://pma.dextra.com.br/login.json?login=\(username)&senha=\(password)")!
+        guard let username = self.username?.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed),
+            let password = self.password?.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else { return }
+        let url = URL(string: "https://pma.dextra.com.br/login.json?login=\(username)&senha=\(password  )")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
 
