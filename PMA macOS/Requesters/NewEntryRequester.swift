@@ -82,6 +82,8 @@ class NewEntryRequester {
             return .differentDays
         case "Sua sessão expirou. Efetue o login novamente.":
             return .expiredSession
+        case " Esforço precisa pertencer a intervalos de 5 minutos.", "In&iacute;cio  precisa pertencer a intervalos de 5 minutos.":
+            return .invalidStartTime
         case "Fim  precisa pertencer a intervalos de 5 minutos.":
             return .invalidEndTime
         case " Já existe um registro cadastrado para esse dia no intervalo informado. Favor verifique e tente novamente.":
