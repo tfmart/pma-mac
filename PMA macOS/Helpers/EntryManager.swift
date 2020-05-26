@@ -59,6 +59,20 @@ class EntryManager {
             return .saveDraft
         }
     }
+    
+    static func createEntryRequest(startDate: Date, endDate: Date, description: String, success: @escaping () -> (), failure: @escaping (PMAError) -> ()) {
+        let startDateValue = "\(startDate.day)%20\(startDate.time)"
+        let endDateValue = "\(endDate.day)%20\(endDate.time)"
+        let descriptionValue = description.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+        let newEntryRequester = NewEntryRequester(start: startDateValue, end: endDateValue,
+                                                  projectID: 959, activityID: 8915,
+                                                  description: descriptionValue ?? "") { (entry, error) in
+                                                    DispatchQueue.main.async {
+                                                        error == nil ? success() : failure(error!)
+                                                    }
+        }
+        newEntryRequester.start()
+    }
 }
 
 public enum EntryManagerState {
