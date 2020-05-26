@@ -22,4 +22,14 @@ extension Date {
         let dayString = dayFormatter.string(from: self)
         return dayString
     }
+    
+    static func sync(dayFrom startDate: Date, to finalDate: Date) -> Date {
+        let calendar = NSCalendar(calendarIdentifier: .gregorian)
+        let startComponents = calendar?.components([.day, .month, .year], from: startDate);
+        var endComponents = calendar?.components([.hour, .minute], from: finalDate);
+        endComponents?.day = startComponents?.day
+        endComponents?.month = startComponents?.month
+        endComponents?.year = startComponents?.year
+        return (calendar?.date(from: endComponents!))!
+    }
 }
