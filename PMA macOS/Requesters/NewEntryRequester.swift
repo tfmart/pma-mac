@@ -78,7 +78,7 @@ class NewEntryRequester {
             return .nonRegisteredActivity
         case "Descricao é de preenchimento obrigatório.":
             return .missingDescription
-        case "Início e fim devem ser no mesmo dia.":
+        case "Início e fim devem ser no mesmo dia.", " Início e fim devem ser no mesmo dia.":
             return .differentDays
         case "Sua sessão expirou. Efetue o login novamente.":
             return .expiredSession
