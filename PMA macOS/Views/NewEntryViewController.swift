@@ -23,39 +23,24 @@ class NewEntryViewController: NSViewController, NSTextFieldDelegate {
     //MARK: - Properties
     var hasCreatedEntry: Bool = false
     
+    var startDate: Date {
+        return Date.sync(dayFrom: startDayPicker.dateValue, to: startTimePicker.dateValue)
+    }
+    
+    var endDate: Date {
+        return Date.sync(dayFrom: startDate, to: endTimePicker.dateValue)
+    }
+    
     //MARK: - IBActions
     @IBAction func saveButtonClicked(_ sender: Any) {
-        let startDate = "\(startDayPicker.dateValue.day)%20\(startTimePicker.dateValue.time)"
-        let endDate = "\(startDayPicker.dateValue.day)%20\(endTimePicker.dateValue.time)"
-        let description = descriptionTextField.stringValue.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
-        let newEntryRequester = NewEntryRequester(start: startDate, end: endDate,
-                                                  projectID: 959, activityID: 8915,
-                                                  description: description ?? "") { (entry, error) in
-                                                    DispatchQueue.main.async {
-                                                        guard error == nil else {
-                                                            self.hasCreatedEntry = false
-                                                            EntryManager.saveDraft(date: self.startDayPicker.dateValue, starTime: self.startTimePicker.dateValue, endTime: self.endTimePicker.dateValue, description: self.descriptionTextField.stringValue)
-                                                            if error == .expiredSession {
-                                                                UserDefaults.standard.set(false, forKey: "hasSession")
-                                                                SessionManager.shared.displayLogin(message: error?.rawValue) {}
-                                                            } else {
-                                                                self.displayNotification(with: error)
-                                                            }
-                                                            return
-                                                        }
-                                                        self.displayNotification()
-                                                        self.hasCreatedEntry = true
-                                                        UserDefaults.standard.set(true, forKey: "nextEntry")
-                                                        self.view.window?.performClose(sender)
-                                                    }
-        }
-        newEntryRequester.start()
+        self.createEntry(sender)
     }
     
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.usernameLabel.stringValue = SessionManager.shared.username
+        self.descriptionTextField.delegate = self
         pickersInitialSetup()
     }
     
@@ -93,8 +78,42 @@ class NewEntryViewController: NSViewController, NSTextFieldDelegate {
         descriptionTextField.stringValue = EntryManager.description ?? ""
     }
     
+    private func createEntry(_ sender: Any) {
+        EntryManager.createEntryRequest(startDate: startDate, endDate: endDate, description: descriptionTextField.stringValue, success: {
+            self.newEntryCreated()
+            self.view.window?.performClose(sender)
+        }) { (error) in
+            self.handleError(error)
+        }
+    }
+    
+    private func newEntryCreated() {
+        self.displayNotification()
+        self.hasCreatedEntry = true
+        UserDefaults.standard.set(true, forKey: "nextEntry")
+    }
+    
+    private func handleError(_ error: PMAError) {
+        self.hasCreatedEntry = false
+        EntryManager.saveDraft(date: self.startDayPicker.dateValue, starTime: self.startTimePicker.dateValue, endTime: self.endTimePicker.dateValue, description: self.descriptionTextField.stringValue)
+        if error == .expiredSession {
+            UserDefaults.standard.set(false, forKey: "hasSession")
+            SessionManager.shared.displayLogin(message: error.rawValue) {}
+        } else {
+            self.displayNotification(with: error)
+        }
+    }
+    
     //MARK: - NSTextFieldDelegate
     func controlTextDidChange(_ obj: Notification) {
         
+    }
+    
+    func control(_ control: NSControl, textView: NSTextView, doCommandBy commandSelector: Selector) -> Bool {
+        if (commandSelector == #selector(NSResponder.insertNewline(_:))) {
+            self.createEntry(textView)
+            return true
+        }
+        return false
     }
 }
