@@ -26,5 +26,5 @@ Use esse programa programa por sua conta e risco! Como ainda estamos nas primeir
 Caso queira contribuir para esse projeto: 
 * Faça um `fork` deste repositório
 * Crie a sua própia `branch`
-* Faça o commit das suas branches
+* Faça o commit na suas branch
 * Crie um novo `pull request`
